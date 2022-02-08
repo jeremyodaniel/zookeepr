@@ -1,18 +1,18 @@
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
 const { animals } = require('./data/animals');
-const fs = require ('fs');
-const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(express.static('public/zookeepr-public'));
 // Both the following middleware functions are needed for any server that will
 // POST data.
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
-
 
 
 function filterByQuery(query, animalsArray) {
@@ -94,7 +94,7 @@ app.get('/api/animals/:id', (req, res) => {
 app.post('/api/animals', (req, res) => {
   // set id based on what the next index of the array will be
   req.body.id = animals.length.toString();
-
+  
   // if any data in req.body is incorrect, send 400 error back
   if (!validateAnimal(req.body)) {
     res.status(400).send('The animal is not properly formatted.');
@@ -102,6 +102,25 @@ app.post('/api/animals', (req, res) => {
     const animal = createNewAnimal(req.body, animals);
     res.json(animal);
   }
+});
+
+// The empty path- ('/') -is used to braing us to the root route of the server.
+// It creates the homepage of the server.
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepr-public/index.html'));
+});
+
+app.get('/animals', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepr-public/animals.html'));
+});
+
+app.get('/zookeepers', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepr-public/zookeepers.html'));
+});
+// The wildcard route should always be last or it will take precedence over any 
+// named route that comes after it.
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/zookeepr-public/index.html'));
 });
 
 

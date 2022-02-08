@@ -135,6 +135,24 @@
         "hungry"
       ],
       "id": "13"
+    },
+    {
+      "name": "banana",
+      "species": "bear",
+      "diet": "carnivore",
+      "personalityTraits": [
+        "hungry"
+      ],
+      "id": "14"
+    },
+    {
+      "name": "harpo",
+      "species": "cow",
+      "diet": "herbivore",
+      "personalityTraits": [
+        "hungry"
+      ],
+      "id": "15"
     }
   ]
 }
