@@ -8,6 +8,7 @@ const {
 const { animals } = require("../data/animals.json");
 const res = require("express/lib/response");
 
+jest.mock('fs');
 
 test("creates an animal object", () => {
 	const animal = createNewAnimal(
