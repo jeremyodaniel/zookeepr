@@ -117,54 +117,6 @@
         "hungry"
       ],
       "id": "11"
-    },
-    {
-      "name": "Larry",
-      "species": "lemur",
-      "diet": "omnivore",
-      "personalityTraits": [
-        "hungry"
-      ],
-      "id": "12"
-    },
-    {
-      "name": "Larry",
-      "species": "lemur",
-      "diet": "omnivore",
-      "personalityTraits": [
-        "hungry"
-      ],
-      "id": "13"
-    },
-    {
-      "name": "banana",
-      "species": "bear",
-      "diet": "carnivore",
-      "personalityTraits": [
-        "hungry"
-      ],
-      "id": "14"
-    },
-    {
-      "name": "harpo",
-      "species": "cow",
-      "diet": "herbivore",
-      "personalityTraits": [
-        "hungry"
-      ],
-      "id": "15"
-    },
-    {
-      "name": "Darlene",
-      "id": "jhgdja3ng2"
-    },
-    {
-      "name": "Darlene",
-      "id": "jhgdja3ng2"
-    },
-    {
-      "name": "Darlene",
-      "id": "jhgdja3ng2"
     }
   ]
 }
